@@ -22,10 +22,12 @@ inRange : (number , StartValue , endValue ) => {
        console.log(m)
        return true ; 
    }
+},
+words : (string) => {
+    const array = string.split(" ")
+    return array ; 
 }
 } ;
-
-console.log(_.inRange( 6 , 10 ) ) 
 
 // Do not write or modify code below this line.
 module.exports = _;
