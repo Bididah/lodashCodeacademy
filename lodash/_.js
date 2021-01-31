@@ -48,8 +48,11 @@ pad : (string , length) => {
          }
          return string ; 
        }  }
+},
+has : (obj , Key ) =>  (obj[Key] === undefined) ? false : true  ,
+
 }
-}
+
 
 
 // Do not write or modify code below this line.
