@@ -50,7 +50,15 @@ pad : (string , length) => {
        }  }
 },
 has : (obj , Key ) =>  (obj[Key] === undefined) ? false : true  ,
-
+invert : (obj) => {
+    let value = Object.values(obj)
+    let key = Object.keys(obj)
+    let inverterobj = {}
+    for(let i = 0 ; i < key.length ; i++){
+        inverterobj[value[i]] = key[i] 
+    }
+    return inverterobj ; 
+}
 }
 
 
