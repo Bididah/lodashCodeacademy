@@ -70,12 +70,14 @@ findKey : (obj,func) => {
         return keys[index]
     }
 },
+drop : (array , number) => {
+    if(number === undefined){     
+        return array.slice(1);
+    }else{  let droptedArray = array.slice(number)
+        return droptedArray ; }
+},
 }
-console.log(_.findKey(users = {
-    'barney':  { 'age': 36, 'active': true },
-    'fred':    { 'age': 40, 'active': false },
-    'pebbles': { 'age': 1,  'active': true }
-  }, function(o) { return o.age < 40; } ))
+console.log(_.drop([1, 2, 3]))
 
 
 
