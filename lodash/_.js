@@ -58,8 +58,24 @@ invert : (obj) => {
         inverterobj[value[i]] = key[i] 
     }
     return inverterobj ; 
+}, 
+findKey : (obj,func) => {
+    let keys = Object.keys(obj)
+    let value = Object.values(obj)
+    let funValues = value.map((element)=> func(element))
+    let index = funValues.indexOf(true)
+    if (index === -1) {
+        return undefined 
+    } else {
+        return keys[index]
+    }
+},
 }
-}
+console.log(_.findKey(users = {
+    'barney':  { 'age': 36, 'active': true },
+    'fred':    { 'age': 40, 'active': false },
+    'pebbles': { 'age': 1,  'active': true }
+  }, function(o) { return o.age < 40; } ))
 
 
 
