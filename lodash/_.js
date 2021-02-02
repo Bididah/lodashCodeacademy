@@ -76,8 +76,12 @@ drop : (array , number) => {
     }else{  let droptedArray = array.slice(number)
         return droptedArray ; }
 },
+dropWhile : ( array , func) => {
+    valueArray = array.map(element => func(element,array.indexOf(element),array))
+    let n = valueArray.indexOf(false)
+    return _.drop(array,n)
+},
 }
-console.log(_.drop([1, 2, 3]))
 
 
 
